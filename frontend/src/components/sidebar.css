@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#0b0f17;
+    border-right:1px solid #2b1f4f;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:30px;
+    border-bottom:1px solid #1b1430;
+}
+
+.logo span{
+    color:#ffffff;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo-img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* Navigation */
+
+nav{
+    display:flex;
+    flex-direction:column;
+    margin-top:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#8b8f9a;
+    font-size:18px;
+    font-weight:500;
+    padding:18px 30px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+nav a:hover{
+    background:#171c28;
+    color:white;
+}
+
+nav a.active{
+    background:#25153c;
+    color:white;
+    border-top:1px solid #5a2ea6;
+    border-bottom:1px solid #5a2ea6;
+}
+
+/* Bottom User */
+
+.user-info{
+    border-top:1px solid #1b1430;
+    padding:22px 30px;
+}
+
+.user-info p{
+    color:white;
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.user-info small{
+    color:#8b8f9a;
+    font-size:13px;
+}
