@@ -1,0 +1,71 @@
+.recent-container {
+  width: 380px;
+  height: 650px;
+  background: #0d1117;
+  border: 2px solid #5d3fd3;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.recent-header {
+  padding: 18px;
+  border-bottom: 1px solid #222;
+}
+
+.recent-header h3 {
+  color: #9ca3af;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.snippet-list {
+  overflow-y: auto;
+}
+
+.snippet-card {
+  padding: 18px;
+  border-bottom: 1px solid #1d2330;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.snippet-card:hover {
+  background: #1a1f2d;
+}
+
+.snippet-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.snippet-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #8b5cf6;
+  border-radius: 50%;
+}
+
+.snippet-time {
+  color: #8b8b8b;
+  font-size: 13px;
+}
+
+.snippet-bottom {
+  margin-top: 8px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.separator {
+  margin: 0 8px;
+}
