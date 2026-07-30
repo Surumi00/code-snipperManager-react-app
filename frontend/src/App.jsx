@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Sidebar from './components/Sidebar'
+import Recentsnippet from './components/Recentsnippet'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Sidebar/>
+      <Recentsnippet/>
     </>
   )
 }
