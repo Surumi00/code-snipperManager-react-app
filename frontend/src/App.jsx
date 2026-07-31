@@ -6,6 +6,7 @@ import './App.css'
 import Sidebar from './components/Sidebar'
 import Recentsnippet from './components/Recentsnippet'
 import AddSnippet from './components/AddSnippet'
+import ViewSnippet from './components/ViewSnippet'
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <Sidebar/>
       <AddSnippet/>
       <Recentsnippet/>
+      <ViewSnippet/>
     </>
   )
 }
