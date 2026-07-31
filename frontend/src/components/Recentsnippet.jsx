@@ -6,7 +6,7 @@ const RecentSnippet = () => {
   const [recentSnippet, setRecentSnippet] = useState([]);
 
   const fetchData = () => {
-    axios.post("http://localhost:3000/view-snippet")
+    axios.get("http://localhost:3000/view-snippet")
       .then((res) => {
         setRecentSnippet(res.data);
       })
