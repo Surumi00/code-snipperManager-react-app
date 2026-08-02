@@ -10,15 +10,27 @@ const Sidebar = () => {
 </div>
 
     <nav>
-        <a className="active">Dashboard</a>
-        <a>My Snippets</a>
-        <a>Profile</a>
-        <a>Logout</a>
+        <a className="active">
+            <span className="nav-icon">▣</span>
+            <span>Dashboard</span>
+        </a>
+        <a>
+            <span className="nav-icon">🗂</span>
+            <span>My Snippets</span>
+        </a>
+        <a>
+            <span className="nav-icon">👤</span>
+            <span>Profile</span>
+        </a>
+        <a>
+            <span className="nav-icon">⏻</span>
+            <span>Log out</span>
+        </a>
     </nav>
 
     <div className="user-info">
         <p>suru@snippy</p>
-        <small>0 snippets saved</small>
+        <small>24 snippets saved</small>
     </div>
 </div>
   )
