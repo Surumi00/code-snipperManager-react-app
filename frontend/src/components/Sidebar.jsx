@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from "../assets/snippy.png";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -12,25 +14,25 @@ const Sidebar = () => {
     <nav>
         <a className="active">
             <span className="nav-icon">▣</span>
-            <span>Dashboard</span>
+            <Link className="nav-link" to="/">Dashboard</Link>
         </a>
         <a>
             <span className="nav-icon">🗂</span>
-            <span>My Snippets</span>
+            <Link className="nav-link" to="/Mysnippets">My Snippets</Link>
         </a>
         <a>
             <span className="nav-icon">👤</span>
-            <span>Profile</span>
+            <Link className="nav-link" to="/profile">Profile</Link>
         </a>
         <a>
             <span className="nav-icon">⏻</span>
-            <span>Log out</span>
+            <Link className="nav-link" to="/logout">Log out</Link>
         </a>
     </nav>
 
     <div className="user-info">
         <p>suru@snippy</p>
-        <small>24 snippets saved</small>
+        <small></small>
     </div>
 </div>
   )

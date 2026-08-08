@@ -3,8 +3,14 @@ import Sidebar from "../components/Sidebar";
 import RecentSnippet from "../components/RecentSnippet";
 import ViewSnippet from "../components/ViewSnippet";
 import "./Home.css";
+import{useNavigate} from "react-router-dom"
+import { useState } from "react";
+
 
 const Home = () => {
+  const navigate = useNavigate();
+  const[selectedSnippet, setSelectedSnippet] = useState(null);
+
   return (
     <div className="home">
 
@@ -23,7 +29,12 @@ const Home = () => {
             className="search-box"
           />
 
-          <button className="add-btn">
+          <button className="add-btn"
+          
+          onClick={()=>navigate("/add-snippet")}
+          
+          
+          >
             Add Snippet
           </button>
 
@@ -33,11 +44,11 @@ const Home = () => {
         <div className="content-area">
 
           <div className="recent-section">
-            <RecentSnippet />
+            <RecentSnippet onselectsnippet={setSelectedSnippet} />
           </div>
 
           <div className="view-section">
-            <ViewSnippet />
+            <ViewSnippet snippet={selectedSnippet} />
           </div>
 
         </div>

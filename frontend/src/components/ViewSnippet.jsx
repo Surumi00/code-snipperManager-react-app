@@ -3,24 +3,9 @@ import axios from "axios";
 import "./viewsnippet.css";
 import Editor from "@monaco-editor/react";
 
-const ViewSnippet = () => {
+const ViewSnippet = ({ snippet }) => {
 
-  const [viewSnippet, setViewSnippet] = useState([]);
-
-  const fetchData = () => {
-    axios
-      .get("http://localhost:3000/view-snippet")
-      .then((res) => {
-        setViewSnippet(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  
 
 
   // monocode editor theme customization function
@@ -47,11 +32,11 @@ function handleEditorWillMount(monaco) {
 
 
 
- console.log(viewSnippet[2]);
+
   return (
     <div className="code-container">
 
-      {viewSnippet.length > 0 && (
+      {snippet && (
 
         <div className="code-box">
 
@@ -63,15 +48,15 @@ function handleEditorWillMount(monaco) {
               <span className="green"></span>
             </div>
            
-            <h3>{viewSnippet[2].title}</h3>
+            <h3>{snippet.title}</h3>
 
           </div>
 
        <Editor
   beforeMount={handleEditorWillMount}
   theme="snippy-dark"
-  language={viewSnippet[2].language.toLowerCase()}
-  value={viewSnippet[2].code}
+  language={snippet.language.toLowerCase()}
+  value={snippet.code}
   height="100%"
   options={{
     automaticLayout: true,

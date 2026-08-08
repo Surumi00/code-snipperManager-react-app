@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./RecentSnippet.css";
 
-const RecentSnippet = () => {
+const RecentSnippet = ({ onselectsnippet }) => {
   const [recentSnippet, setRecentSnippet] = useState([]);
-
+  
+  // fetching the entire snippet data 
   const fetchData = () => {
     axios.get("http://localhost:3000/view-snippet")
       .then((res) => {
@@ -19,6 +20,23 @@ const RecentSnippet = () => {
     fetchData();
   }, []);
 
+  // function to delete a snippet by its ID
+
+  const deleteSnippet = (id) => {
+    axios.delete(`http://localhost:3000/delete-snippet/${id}`)
+      .then((res) => {
+        alert("Snippet deleted successfully");
+        fetchData(); 
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+
+
+
+
   return (
     <div className="recent-container">
       <div className="recent-header">
@@ -27,7 +45,12 @@ const RecentSnippet = () => {
 
       <div className="snippet-list">
         {recentSnippet.map((value, index) => (
-          <div className="snippet-card" key={index}>
+          <div className="snippet-card" key={value._id} onClick={() => onselectsnippet(value)}
+          
+          
+          
+          
+          >
             <div className="snippet-top">
               <div className="snippet-title">
                 <span className="dot"></span>
@@ -39,16 +62,36 @@ const RecentSnippet = () => {
               </div>
             </div>
 
-            <div className="snippet-bottom">
-              <span>{value.language}</span>
+           <div className="snippet-bottom">
 
-              {value.tags && value.tags.length > 0 && (
-                <>
-                  <span className="separator">•</span>
-                  <span>{value.tags.join(", ")}</span>
-                </>
-              )}
-            </div>
+  <div className="snippet-info">
+
+    <span>{value.language}</span>
+
+    {value.tags && value.tags.length > 0 && (
+      <>
+        <span className="separator">•</span>
+
+        <span className="tags">
+          {value.tags.join(", ")}
+        </span>
+      </>
+    )}
+
+  </div>
+
+  <button
+    className="delete-btn"
+    onClick={(event) => {
+      event.stopPropagation();
+      deleteSnippet(value._id);
+    }}
+  >
+    ✕
+  </button>
+
+</div>
+            
           </div>
         ))}
       </div>

@@ -8,13 +8,26 @@ import Recentsnippet from './components/Recentsnippet'
 import AddSnippet from './components/AddSnippet'
 import ViewSnippet from './components/ViewSnippet'
 import Home from './pages/Home'
+import{BrowserRouter, Routes, Route} from "react-router-dom"
+import Mysnippets from './pages/Mysnippets'
 
 function App() {
   
 
   return (
     <>
-      <Home/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Mysnippets" element={<Mysnippets />} />
+          <Route path="/add-snippet" element={<AddSnippet />} />
+          <Route path="/view-snippet" element={<ViewSnippet />} />
+        </Routes>
+      </BrowserRouter>
+      
+      
+      
+      
     </>
   )
 }
