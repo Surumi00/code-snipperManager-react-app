@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./RecentSnippet.css";
+import "./recentSnippet.css";
 
 const RecentSnippet = ({ onselectsnippet }) => {
   const [recentSnippet, setRecentSnippet] = useState([]);
