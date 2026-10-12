@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
-import RecentSnippet from "../components/RecentSnippet";
+import RecentSnippet from "../components/Recentsnippet";
 import ViewSnippet from "../components/ViewSnippet";
 import "./Home.css";
 import{useNavigate} from "react-router-dom"
