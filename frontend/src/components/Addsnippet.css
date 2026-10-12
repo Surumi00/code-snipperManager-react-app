@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #1f1622;
+    font-family: "JetBrains Mono", monospace;
+    overflow: hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.add-snippet-page {
+    width: 100%;
+    height: 100vh;
+    background: #a210bb;
+}
+
+
+/* =========================
+   SIDEBAR - LEFT
+   ========================= */
+
+.add-snippet-page .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 313px;
+    height: 100vh;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   FORM AREA
+   ========================= */
+
+.form-container {
+    margin-left: 313px;
+
+    width: calc(100% - 313px);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000000;
+
+    /* gap around the form */
+    padding: 20px 80px;
+}
+
+
+/* =========================
+   FORM CARD
+   ========================= */
+
+.form-card {
+    width: 650px;
+    max-width: 100%;
+
+    background: #040405;
+
+    border: 1px solid #7316d1;
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow: 0 0 18px rgba(109, 40, 217, 0.2);
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.form-card h1 {
+    color: white;
+    text-align: center;
+
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   INPUT GROUP
+   ========================= */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    color: #d1d5db;
+
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+
+    background: #1d1d1d;
+    color: white;
+
+    border: 1px solid #08020ed7;
+    border-radius: 8px;
+
+    padding: 9px 12px;
+
+    font-size: 13px;
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+/* INPUT FOCUS */
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 8px rgba(139, 92, 246, 0.35);
+}
+
+
+/* PLACEHOLDER */
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #64748b;
+}
+
+
+/* =========================
+   TEXTAREA
+   ========================= */
+
+textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* BUTTON HOVER */
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    background: #8b5cf6;
+}
+
+
+/* =========================
+   DATE ICON
+   ========================= */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
