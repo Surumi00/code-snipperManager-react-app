@@ -7,7 +7,7 @@ const RecentSnippet = ({ onselectsnippet }) => {
   
   // fetching the entire snippet data 
   const fetchData = () => {
-    axios.get("http://localhost:3000/view-snippet")
+    axios.get(`${import.meta.env.VITE_API_URL}/view-snippet`)
       .then((res) => {
         setRecentSnippet(res.data);
       })
@@ -23,7 +23,7 @@ const RecentSnippet = ({ onselectsnippet }) => {
   // function to delete a snippet by its ID
 
   const deleteSnippet = (id) => {
-    axios.delete(`http://localhost:3000/delete-snippet/${id}`)
+    axios.delete(`${import.meta.env.VITE_API_URL}/delete-snippet/${id}`)
       .then((res) => {
         alert("Snippet deleted successfully");
         fetchData(); 

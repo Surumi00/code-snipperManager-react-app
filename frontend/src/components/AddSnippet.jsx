@@ -33,7 +33,7 @@ const AddSnippet = () => {
         return;
     }
 
-        axios.post("http://localhost:3000/add-snippet", input)
+        axios.post(`${import.meta.env.VITE_API_URL}/add-snippet`, input)
             .then((res) => {
 
                 alert("data added");

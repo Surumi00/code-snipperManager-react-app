@@ -10,7 +10,7 @@ const Mysnippets = () => {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:3000/view-snippet")
+      .get(`${import.meta.env.VITE_API_URL}/view-snippet`)
       .then((res) => {
         setSnippets(res.data);
       })
